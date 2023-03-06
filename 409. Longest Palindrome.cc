@@ -15,9 +15,12 @@ public:
         if(letters.size() == 1) return letters[s[0]];
 
         for(auto x : letters){
-            if(! (x.second % 2)){
+            if(!(x.second % 2)){
                 ans += x.second;
                 letters[x.first] = 0;
+            }else{
+                ans += x.second - 1;
+                letters[x.first] = 1;
             }
         }
         for(auto x: letters){
